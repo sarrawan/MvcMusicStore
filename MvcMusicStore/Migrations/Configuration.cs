@@ -9,8 +9,7 @@ namespace MvcMusicStore.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "MvcMusicStore.Models.MusicStoreEntities";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(MvcMusicStore.Models.MusicStoreEntities context)
@@ -27,6 +26,8 @@ namespace MvcMusicStore.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
         }
     }
 }
