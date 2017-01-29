@@ -23,7 +23,7 @@ namespace MvcMusicStore.Controllers
         {
             // Retrieve Genre and its Associated Albums from database
             var genreModel = storeDB.Genres.Include("Albums")
-                .Single(g => g.Name == genre);
+                .SingleOrDefault(g => g.Name == genre);
 
             return View(genreModel);
         }
@@ -33,6 +33,14 @@ namespace MvcMusicStore.Controllers
         {
             var album = storeDB.Albums.Find(id);
             return View(album);
+        }
+
+        // GET: /Store/GenreMenu
+        [ChildActionOnly]
+        public ActionResult GenreMenu()
+        {
+            var genres = storeDB.Genres.ToList();
+            return PartialView(genres);
         }
     }
 }
