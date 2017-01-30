@@ -8,7 +8,10 @@ using System.Web.Mvc;
 
 namespace MvcMusicStore.Models
 {
-    [Bind(Exclude = "AlbumId")]
+    //[Bind(Exclude = "AlbumId")]
+    // When this isn't commented, when try
+    // update db (line 94 in StoreManController)
+    // albumId returns as 0 --> invalid 
     public class Album
     {
         [ScaffoldColumn(false)]
